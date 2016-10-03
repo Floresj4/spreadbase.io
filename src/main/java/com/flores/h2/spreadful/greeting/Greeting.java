@@ -1,26 +1,28 @@
 package com.flores.h2.spreadful.greeting;
 
-import org.springframework.hateoas.ResourceSupport;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * 
  * @author Jason
  */
-public class Greeting extends ResourceSupport {
+public class Greeting {
 
-    private final String content;
-    
-    public Greeting() {
-    	this.content = "...";
-    }
+	private long id;
+	private String content;
+	
+    public String getContent() {
+		return content;
+	}
 
-    public Greeting(@JsonProperty("content") String content) {
+	public long getId() {
+		return id;
+	}
+
+	public void setContent(String content) {
     	this.content = content;
     }
 
-	public String getContent() {
-		return content;
+	public void setId(long id) {
+		this.id = id;
 	}
 }
