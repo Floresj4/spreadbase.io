@@ -6,22 +6,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
 	<style type='text/css'>
-		body { margin:0; }
-		#main-container {
-			width:800px;
-			margin:0 auto
-		}
+		.stretch { width:100%; }
+		.pointer { cursor:pointer; }
+		.mrg-btm-sm { margin-bottom:5px; }
+		.mrg-btm-md { margin-bottom:10px; }
 	</style>
 </head>
 <body>
 
 	<div id='main-container' class='container-fluid'>
 		<div class='row'>
-			<div class='col-md-1'><h1>spreadbase</h1></div>
+			<div class='col-md-12'><h1>spreadbase</h1></div>
 		</div>
 		
 		<div class='row'>
-			<div class='col-md-1'>
+			<div class='col-md-12'>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
@@ -34,26 +33,34 @@
 		</div>
 		
 		<div class='row'>
-			<div class='col-md-1'>
+			<div class='col-md-12'>
 				<h3>Convert</h3>
 			</div>
 		</div>
 		
-		<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+		<div class='row'>
 
-			<div class='row'>
-				<div class='col-md-3'>
-					<p>File: </p>
-				</div>
-				<div class='col-md-3'>
-					<input type="text" th:field="*{content}" />
-				</div>
-				<div class='col-md-3'>
-					<input type="submit" value="Submit" />
-				</div>
+			<div class='col-sm-1 col-md-1'></div>
+			<div class='col-sm-10 col-md-10'>
+				<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+	
+					<div class='row'>
+						<div class='col-sm-1'>
+							<label>File</label>
+						</div>
+						<div class='col-sm-10'>
+							<input type="text" class='stretch pointer mrg-btm-md' th:field="*{content}" />
+						</div>
+						<div class='col-sm-1'>
+							<input type="submit" value="Submit" />
+						</div>
+					</div>
+		
+			    </form>
 			</div>
+			<div class='col-sm-1 col-md-1'></div>
 
-	    </form>
+		</div>
 	
 	</div>
 
