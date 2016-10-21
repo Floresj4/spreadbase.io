@@ -1,14 +1,14 @@
-package com.flores.h2.spreadful;
+package com.flores.h2.spreadful.model.impl;
 
 /**
  * 
  * @author Jason
  */
-public class Worksheet {
+public class SpreadbaseResource {
 
 	private String content;
 	
-	public Worksheet() {}
+	public SpreadbaseResource() {}
 
 	public String getContent() {
 		return content;
