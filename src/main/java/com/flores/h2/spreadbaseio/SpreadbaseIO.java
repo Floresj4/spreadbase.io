@@ -71,13 +71,19 @@ public class SpreadbaseIO {
 				writer.write(tables);
 			}
 			
+			//write csv data
+			try { Spreadbase.write(tmp); } catch (Exception e) {
+				logger.error("writing csv data...");
+				throw new IOException(e);
+			}
+
 			//run sql script
 			try {
 				Class.forName("org.h2.Driver");
 				Connection conn = DriverManager.getConnection(
 						"jdbc:h2:" + String.format(STR_CONNECTION, BuilderUtil.fileAsH2File(tmp))
 						, "sa", "");
-				
+
 				RunScript.execute(conn, new InputStreamReader(new FileInputStream(sqlFile)));
 			} catch (ClassNotFoundException | SQLException e) {
 				logger.error("creating datasource...");
