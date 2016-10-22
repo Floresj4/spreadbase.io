@@ -1,4 +1,4 @@
-package com.flores.h2.spreadful;
+package com.flores.h2.spreadbaseio;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.boot.SpringApplication;

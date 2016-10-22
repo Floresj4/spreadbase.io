@@ -1,4 +1,4 @@
-package com.flores.h2.spreadful.model.impl;
+package com.flores.h2.spreadbaseio.model.impl;
 
 /**
  * Simple version pojo for start

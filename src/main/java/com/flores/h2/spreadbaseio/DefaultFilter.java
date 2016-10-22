@@ -1,4 +1,4 @@
-package com.flores.h2.spreadful;
+package com.flores.h2.spreadbaseio;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleCORSFilter implements Filter {
+public class DefaultFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -32,6 +32,7 @@ public class SimpleCORSFilter implements Filter {
 		    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
 		    response.setHeader("Access-Control-Max-Age", "3600");
 		    response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
+		    response.setHeader("Connection", "keep-alive");
 
 		    chain.doFilter(req, res);
 	}
@@ -39,5 +40,4 @@ public class SimpleCORSFilter implements Filter {
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 	}
-
 }
